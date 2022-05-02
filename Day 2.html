@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <title>Document</title>
+</head>
+<body class="container">
+
+       <h1>HTTP/1.x vs HTTP/2: A Comparative Study</h1> 
+       <ul>
+   <li> HTTP2 is much faster and more reliable than HTTP1.1.</li> <br>
+   <li>HTTP1.1 loads a single request for every TCP connection, while HTTP2 avoids network delay by using multiplexing.</li><br>
+   <li>As mentioned in the previous section, HTTP/1.1 and HTTP/2 share semantics, ensuring that the requests and responses traveling between the server and client in both protocols reach their destinations as traditionally formatted messages with headers and bodies, using familiar methods like GET and POST.</li><br>
+</ul>
+    
+
+        <h2>HTTP/1.1 — Pipelining and Head-of-Line Blocking</h2>
+
+        <p>It supports connection reuse i.e. for every TCP connection there could be multiple requests and responses, and pipelining where the client can request several resources from the server at once. However, pipelining was hard to implement due to issues such as head-of-line blocking and was not a feasible solution.</p>
+
+        <h3>web Traffic</h3>
+        <p>HTTP/1.1 provides faster delivery of web pages and reduces web traffic as compared to HTTP/1.0. However, TCP starts slowly and with domain sharding (resources can be downloaded simultaneously by using multiple domains), connection reuse and pipelining, there is an increased risk of network congestion.</p>
+
+        <h3>Cache</h3>
+        <p>on the caching support by using additional headers like cache-control, conditional headers like If-Match and by using entity tags.</p>
+
+        <br><br><br>
+
+<h2>HTTP/2 — Advantages of the Binary Framing Layer</h2>
+
+        <p>HTTP/2 allows developers to customize prioritization, or the order in which web assets load.</p>
+
+
+        <p>In HTTP/2, the binary framing layer encodes requests/responses and cuts them up into smaller packets of information, greatly increasing the flexibility of data transfer.</p> 
+
+        <p>Uses multiplexing, where over a single TCP connection resources to be delivered are interleaved and arrive at the client almost at the same time. It is done using streams which can be prioritized, can have dependencies and individual flow control. It also provides a feature called server push that allows the server to send data that the client will need but has not yet requested.</p>
+
+        <h3>web Traffic</h3>
+        <p>HTTP/2 utilizes multiplexing and server push to effectively reduce the page load time by a greater margin along with being less sensitive to network delays.</p>
+
+        <h3>Cache</h3>
+
+        <p>HTTP/2 does not change much in terms of caching. With the server push feature if the client finds the resources are already present in the cache, it can cancel the pushed stream. </p>
+
+
+
+
+
+        
+</body>
+</html>
